@@ -60,7 +60,7 @@ class Controller:
                 sg.Popup("Tarefa atualizada com sucesso!")
 
             if event == "remove_task#2":
-                self.__model.remove_task(values["title"])
+                self.__model.remove_task(values["id"])
                 sg.Popup("Tarefa removida com sucesso!")
 
             if event == "back":

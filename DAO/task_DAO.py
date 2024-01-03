@@ -12,14 +12,18 @@ class TaksDAO(DAO):
         return [task for task in super().cache if task["id"] == id][0]
 
     def remove(self, id):
-        super().cache.remove(task for task in super().cache if task["id"] == id)
+        for element in super().cache:
+            if int(element["id"]) == int(id):
+                super().cache.remove(element)
 
     def get_all(self):
         return super().cache
 
     def update(self, task1:dict):
-        if task1["id"] in [task["id"] for task in super().cache]:
-            super().cache.remove(task for task in super().cache if task["id"] == task1["id"])
-            super().cache.append(task1)
-
-
+        for element in super().cache:
+            if element["id"] == task1["id"]:
+                element["title"] = task1["title"]
+                element["description"] = task1["description"]
+                element["deadline"] = task1["deadline"]
+                element["done"] = task1["done"]
+                break

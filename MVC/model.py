@@ -33,7 +33,8 @@ class Model:
             "deadline": deadline,
             "done": False
         }
-        self.__dao.update(task)
+        self.__dao.remove(id)
+        self.__dao.add(task)
 
     def remove_task(self, id):
         self.__dao.remove(id)

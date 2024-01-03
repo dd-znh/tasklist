@@ -89,7 +89,7 @@ class View:
     def remove_task(self):
         self.__layout = [
             [sg.Text("Remover tarefa:")],
-            [sg.Text("Título:"), sg.InputText(key="title")],
+            [sg.Text("id:"), sg.InputText(key="id")],
             [sg.Button("Remover", key="remove_task#2")],
             [sg.Button("Voltar", key="back")]
         ]
